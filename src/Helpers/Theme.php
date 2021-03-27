@@ -7,8 +7,8 @@ use Illuminate\Container\Container;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\ViewFinderInterface;
-use Theanh\MultiTheme\Support\FileConfig;
-use Theanh\MultiTheme\Contracts\ThemeContract;
+use Hassan;
+use Theanh\MultiTheme\ThemeContract;
 use Theanh\MultiTheme\Exceptions\ThemeNotFoundException;
 
 /**
@@ -345,15 +345,14 @@ class Theme implements ThemeContract
      */
     private function loadTheme($theme)
     {
-        
         if (is_null($theme)) {
-            return;
+            throw new ThemeNotFoundException($theme);
         }
         
         $themeInfo = $this->getThemeInfo($theme);
         
         if (is_null($themeInfo)) {
-            return;
+            throw new ThemeNotFoundException($theme);
         }
         
         $this->loadTheme($themeInfo->get('parent'));
