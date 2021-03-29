@@ -7,7 +7,7 @@ use Illuminate\Container\Container;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\ViewFinderInterface;
-use Hassan;
+use Noodlehaus\Config;
 use Theanh\MultiTheme\ThemeContract;
 use Theanh\MultiTheme\Exceptions\ThemeNotFoundException;
 
@@ -123,10 +123,10 @@ class Theme implements ThemeContract
     public function getThemeInfo($themeName)
     {
         $themePath = $this->basePath . '/' . $themeName;
-        $configPath = $themePath . '/info.json';
+        $configPath = $themePath . '/theme.json';
         
         if (file_exists($configPath)) {
-            $theme = FileConfig::load($configPath);
+            $theme = Config::load($configPath);
             $theme['path'] = $themePath;
         
             if (file_exists($themePath . '/screenshot.png')) {
@@ -134,7 +134,7 @@ class Theme implements ThemeContract
             } else {
                 $theme['screenshot'] = asset('vendor/tadcms/images/avatar.png');
             }
-    
+            
             return $theme;
         }
         
@@ -147,7 +147,7 @@ class Theme implements ThemeContract
         $changeLogPath = $themePath . '/changelog.yml';
         
         if (file_exists($changeLogPath)) {
-            return FileConfig::load($changeLogPath)->all();
+            return Config::load($changeLogPath)->all();
         }
     
         return null;
@@ -345,6 +345,7 @@ class Theme implements ThemeContract
      */
     private function loadTheme($theme)
     {
+        
         if (is_null($theme)) {
             throw new ThemeNotFoundException($theme);
         }
@@ -355,7 +356,9 @@ class Theme implements ThemeContract
             throw new ThemeNotFoundException($theme);
         }
         
-        $this->loadTheme($themeInfo->get('parent'));
+        if (@$themeInfo->get('parent')) {
+            $this->loadTheme($themeInfo->get('parent'));
+        }
         
         $viewPath = $themeInfo->get('path') .'/views';
         $langPath = $themeInfo->get('path') .'/lang';

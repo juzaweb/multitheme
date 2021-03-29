@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ themes('[CSSNAME]') }}">
+        {{--<link rel="stylesheet" href="{{ themes('[CSSNAME]') }}">--}}
     </head>
     <body>
         <div class="flex-center position-ref full-height">

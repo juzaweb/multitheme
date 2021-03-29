@@ -107,12 +107,12 @@ class ThemeGeneratorCommand extends Command
         
             'css' => 'assets/css',
             'js'  => 'assets/js',
-            'img' => 'assets/img',
+            'img' => 'assets/images',
         
             'layouts' => 'views/layouts',
         ];
         
-        $this->themeStubPath = __DIR__ . '/../../../stubs';
+        $this->themeStubPath = __DIR__ . '/../../stubs';
 
         $themeStubFiles =  [
             'css'    => 'assets/css/app.css',
@@ -121,7 +121,7 @@ class ThemeGeneratorCommand extends Command
             'lang'   => 'lang/en/content.php',
         ];
         
-        $themeStubFiles['theme'] = 'info.json';
+        $themeStubFiles['theme'] = 'theme.json';
         $themeStubFiles['changelog'] = 'changelog.yml';
 
         $this->makeDir($createdThemePath);

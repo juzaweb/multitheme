@@ -3,7 +3,7 @@
 namespace Theanh\MultiTheme\Commands;
 
 use Illuminate\Console\Command;
-use Theanh\MultiTheme\Contracts\ThemeContract;
+use Theanh\MultiTheme\ThemeContract;
 
 class ThemeListCommand extends Command
 {
