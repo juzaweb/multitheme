@@ -1,6 +1,6 @@
 <?php
 
-namespace Theanh\MultiTheme\Helpers;
+namespace Theanh\MultiTheme;
 
 use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
@@ -8,11 +8,10 @@ use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\ViewFinderInterface;
 use Noodlehaus\Config;
-use Theanh\MultiTheme\ThemeContract;
 use Theanh\MultiTheme\Exceptions\ThemeNotFoundException;
 
 /**
- * Class Tadcms\Helpers\Theme
+ * Class Theanh\MultiTheme\Theme
  *
  * @package    Theanh\Tadcms
  * @author     The Anh Dang <dangtheanh16@gmail.com>

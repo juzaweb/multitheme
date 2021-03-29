@@ -4,7 +4,7 @@ namespace Theanh\MultiTheme\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Theanh\MultiTheme\ThemeContract;
-use Theanh\MultiTheme\Helpers\Theme;
+use Theanh\MultiTheme\Theme;
 
 /**
  * Class Theanh\MultiTheme\Providers\ThemeServiceProvider
