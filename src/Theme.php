@@ -328,8 +328,8 @@ class Theme implements ThemeContract
         $themes = [];
         foreach ($themeDirectories as $themePath) {
             $themeFileConfig = $this->getThemeInfo(basename($themePath));
-            if ($themeFileConfig->has('name')) {
-                $themes[$themeFileConfig->get('name')] = $themeFileConfig->all();
+            if ($themeFileConfig['name']) {
+                $themes[$themeFileConfig['name']] = $themeFileConfig;
             }
         }
         
@@ -344,7 +344,6 @@ class Theme implements ThemeContract
      */
     private function loadTheme($theme)
     {
-        
         if (is_null($theme)) {
             throw new ThemeNotFoundException($theme);
         }
@@ -364,7 +363,6 @@ class Theme implements ThemeContract
         
         $this->finder->prependLocation($viewPath);
         $this->finder->prependNamespace($theme, $viewPath);
-       
         $this->lang->addNamespace($theme, $langPath);
     }
 }

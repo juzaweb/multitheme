@@ -21,7 +21,8 @@
     "require": {
         "php": ">=7.2",
         "hassankhan/config": "^2.1",
-        "symfony/yaml": "^5.2"
+        "symfony/yaml": "^5.2",
+        "theanh/laravel-hooks": "1.*"
     },
     "require-dev": {
       "laravel/laravel": "^6.0 | ^7.0 | ^8.0",
