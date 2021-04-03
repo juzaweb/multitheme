@@ -329,7 +329,7 @@ class Theme implements ThemeContract
         foreach ($themeDirectories as $themePath) {
             $themeFileConfig = $this->getThemeInfo(basename($themePath));
             if ($themeFileConfig['name']) {
-                $themes[$themeFileConfig['name']] = $themeFileConfig;
+                $themes[$themeFileConfig['name']] = $themeFileConfig->all();
             }
         }
         
