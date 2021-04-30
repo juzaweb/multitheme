@@ -1,6 +1,6 @@
 <?php
 
-namespace Theanh\MultiTheme\Commands;
+namespace Tadcms\MultiTheme\Commands;
 
 use Illuminate\Config\Repository;
 use Illuminate\Console\Command;

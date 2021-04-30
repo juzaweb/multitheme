@@ -1,6 +1,6 @@
 <?php
 
-namespace Theanh\MultiTheme\Facades;
+namespace Tadcms\MultiTheme\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -13,6 +13,6 @@ class Theme extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Theanh\MultiTheme\ThemeContract::class;
+        return \Tadcms\MultiTheme\ThemeContract::class;
     }
 }

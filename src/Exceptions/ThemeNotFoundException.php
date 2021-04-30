@@ -1,15 +1,15 @@
 <?php
 
-namespace Theanh\MultiTheme\Exceptions;
+namespace Tadcms\MultiTheme\Exceptions;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * Class Theanh\MultiTheme\Exceptions\ThemeNotFoundException
+ * Class Tadcms\MultiTheme\Exceptions\ThemeNotFoundException
  *
- * @package    Theanh\MultiTheme
+ * @package    Tadcms\MultiTheme
  * @author     The Anh Dang <dangtheanh16@gmail.com>
- * @link       https://github.com/theanhk/tadcms
+ * @link       https://github.com/tadcms/tadcms
  * @license    MIT
  */
 class ThemeNotFoundException extends NotFoundHttpException

@@ -1,17 +1,17 @@
 <?php
 
-namespace Theanh\MultiTheme\Providers;
+namespace Tadcms\MultiTheme\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Theanh\MultiTheme\ThemeContract;
-use Theanh\MultiTheme\Theme;
+use Tadcms\MultiTheme\ThemeContract;
+use Tadcms\MultiTheme\Theme;
 
 /**
- * Class Theanh\MultiTheme\Providers\ThemeServiceProvider
+ * Class Tadcms\MultiTheme\Providers\ThemeServiceProvider
  *
- * @package    Theanh\Tadcms
+ * @package    Tadcms\Tadcms
  * @author     The Anh Dang <dangtheanh16@gmail.com>
- * @link       https://github.com/theanhk/tadcms
+ * @link       https://github.com/tadcms/tadcms
  * @license    MIT
  */
 class ThemeServiceProvider extends ServiceProvider
@@ -39,7 +39,7 @@ class ThemeServiceProvider extends ServiceProvider
         $this->registerTheme();
     
         $this->commands([
-            \Theanh\MultiTheme\Commands\ThemeGeneratorCommand::class,
+            \Tadcms\MultiTheme\Commands\ThemeGeneratorCommand::class,
         ]);
         
         //$this->loadViewsFrom(__DIR__.'/../Views', 'theme');

@@ -1,9 +1,9 @@
 <?php
 
-namespace Theanh\MultiTheme\Commands;
+namespace Tadcms\MultiTheme\Commands;
 
 use Illuminate\Console\Command;
-use Theanh\MultiTheme\ThemeContract;
+use Tadcms\MultiTheme\ThemeContract;
 
 class ThemeListCommand extends Command
 {

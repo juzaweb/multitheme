@@ -1,6 +1,6 @@
 <?php
 
-namespace Theanh\MultiTheme;
+namespace Tadcms\MultiTheme;
 
 interface ThemeContract
 {

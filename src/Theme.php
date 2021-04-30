@@ -1,6 +1,6 @@
 <?php
 
-namespace Theanh\MultiTheme;
+namespace Tadcms\MultiTheme;
 
 use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
@@ -8,14 +8,14 @@ use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\ViewFinderInterface;
 use Noodlehaus\Config;
-use Theanh\MultiTheme\Exceptions\ThemeNotFoundException;
+use Tadcms\MultiTheme\Exceptions\ThemeNotFoundException;
 
 /**
- * Class Theanh\MultiTheme\Theme
+ * Class Tadcms\MultiTheme\Theme
  *
- * @package    Theanh\Tadcms
+ * @package    Tadcms\Tadcms
  * @author     The Anh Dang <dangtheanh16@gmail.com>
- * @link       https://github.com/theanhk/tadcms
+ * @link       https://github.com/tadcms/tadcms
  * @license    MIT
  */
 class Theme implements ThemeContract
@@ -287,29 +287,10 @@ class Theme implements ThemeContract
         return trans($fallback);
     }
     
-    public function isActivate($theme)
-    {
-        return (get_config('active_theme') == $theme);
-    }
-    
-    public function activate($theme)
-    {
-        set_config('activated_theme', $theme);
-        return $this;
-    }
-    
-    public function deActivate($theme)
-    {
-        set_config('activated_theme', $theme);
-        return $this;
-    }
-    
     public function delete($theme) {
-        if (self::isActivate($theme)) {
-            self::deActivate($theme);
-        }
-        
-        File::deleteDirectory(self::getPath($theme), true);
+        $themePath = self::getPath($theme);
+        File::deleteDirectory($themePath, true);
+        File::deleteDirectory($themePath);
     }
     
     public function getPath($theme)

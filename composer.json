@@ -1,5 +1,6 @@
 {
-    "name": "theanh/laravel-multitheme",
+    "name": "tadcms/multitheme",
+    "version": "1.0.1",
     "description": "Laravel multitheme",
     "keywords": [
         "laravel multitheme",
@@ -10,8 +11,7 @@
         {
           "name": "The Anh Dang",
           "email": "dangtheanh16@gmail.com",
-          "role": "Developer",
-          "homepage": "https://fb.com/TheAnhDang.1996"
+          "role": "Developer"
         }
     ],
     "support": {
@@ -22,7 +22,7 @@
         "php": ">=7.2",
         "hassankhan/config": "^2.1",
         "symfony/yaml": "^5.2",
-        "theanh/laravel-hooks": "1.*"
+        "tadcms/hooks": "1.0.*"
     },
     "require-dev": {
       "laravel/laravel": "^6.0 | ^7.0 | ^8.0",
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-          "Theanh\\MultiTheme\\": "src/"
+          "Tadcms\\MultiTheme\\": "src/"
         }
     },
     "extra": {
       "laravel": {
         "providers": [
-          "Theanh\\MultiTheme\\Providers\\ThemeServiceProvider"
+          "Tadcms\\MultiTheme\\Providers\\ThemeServiceProvider"
         ]
       }
     }
